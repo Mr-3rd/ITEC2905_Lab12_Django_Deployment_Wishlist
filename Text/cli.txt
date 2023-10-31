@@ -1,0 +1,216 @@
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9
+$ mkdir django
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9
+$ cd django/
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django
+$ git remote set-url --push origin https://github.com/Mr-3rd/ITEC2905_Lab9_Django.git
+fatal: not a git repository (or any of the parent directories): .git
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django
+$ git innit
+git: 'innit' is not a git command. See 'git --help'.
+
+The most similar command is
+        init
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django
+$ git init
+Initialized empty Git repository in C:/Users/me7196pe/ITEC 2905 Capstone/Lab9/django/.git/
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ git remote set-url --push origin https://github.com/Mr-3rd/ITEC2905_Lab9_Django.git
+error: No such remote 'origin'
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ git remote set-url https://github.com/Mr-3rd/ITEC2905_Lab9_Django.git
+usage: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    --push                manipulate push URLs
+    --add                 add URL
+    --delete              delete URLs
+
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ git remote set-url --push https://github.com/Mr-3rd/ITEC2905_Lab9_Django.git
+usage: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    --push                manipulate push URLs
+    --add                 add URL
+    --delete              delete URLs
+
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ git remote set-url --push https://github.com/Mr-3rd/ITEC2905_Lab9_Django.git
+usage: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    --push                manipulate push URLs
+    --add                 add URL
+    --delete              delete URLs
+
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ git remote set-url --push origin https://github.com/Mr-3rd/ITEC2905_Lab9_Django.git
+error: No such remote 'origin'
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ git remote set-url --push main https://github.com/Mr-3rd/ITEC2905_Lab9_Django.
+git
+error: No such remote 'main'
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ git remote add origin https://github.com/Mr-3rd/ITEC2905_Lab9_Django.git
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ python -m venv venv
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ source venv/ activate
+bash: source: venv/: is a directory
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ venv/activate
+bash: venv/activate: No such file or directory
+
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ source venv/Scripts/activate
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ pip install django
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))': /simple/django/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))': /simple/django/
+Collecting django
+  Obtaining dependency information for django from https://files.pythonhosted.org/packages/b9/45/707dfc56f381222c1c798503546cb390934ab246fc45b5051ef66e31099c/Django-4.2.6-py3-none-any.whl.metadata
+  Downloading Django-4.2.6-py3-none-any.whl.metadata (4.1 kB)
+Collecting asgiref<4,>=3.6.0 (from django)
+  Obtaining dependency information for asgiref<4,>=3.6.0 from https://files.pythonhosted.org/packages/9b/80/b9051a4a07ad231558fcd8ffc89232711b4e618c15cb7a392a17384bbeef/asgiref-3.7.2-py3-none-any.whl.metadata
+  Downloading asgiref-3.7.2-py3-none-any.whl.metadata (9.2 kB)
+Collecting sqlparse>=0.3.1 (from django)
+  Downloading sqlparse-0.4.4-py3-none-any.whl (41 kB)
+     -------------------------------------- 41.2/41.2 kB 491.2 kB/s eta 0:00:00
+Collecting tzdata (from django)
+  Downloading tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+     -------------------------------------- 341.8/341.8 kB 4.3 MB/s eta 0:00:00
+Downloading Django-4.2.6-py3-none-any.whl (8.0 MB)
+   ---------------------------------------- 8.0/8.0 MB 8.7 MB/s eta 0:00:00
+Downloading asgiref-3.7.2-py3-none-any.whl (24 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, django
+Successfully installed asgiref-3.7.2 django-4.2.6 sqlparse-0.4.4 tzdata-2023.3
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ django-admin startproject wishlist
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django (main)
+$ cd wishlist/
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ ls -a
+./  ../  manage.py*  wishlist/
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ source venv/Scripts/activate
+bash: venv/Scripts/activate: No such file or directory
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+October 29, 2023 - 20:13:38
+Django version 4.2.6, using settings 'wishlist.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ python manage.py runserver
+Watching for file changes with StatReloader
+[29/Oct/2023 20:14:52] "GET / HTTP/1.1" 200 10664
+Not Found: /favicon.ico
+[29/Oct/2023 20:14:53] "GET /favicon.ico HTTP/1.1" 404 2112
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+October 29, 2023 - 20:14:38
+Django version 4.2.6, using settings 'wishlist.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ python manage.py startapp travel_wishlist
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ python manage.py makemigrations
+Migrations for 'travel_wishlist':
+  travel_wishlist\migrations\0001_initial.py
+    - Create model Place
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ python mangae.py migrate
+C:\Users\me7196pe\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'C:\\Users\\me7196pe\\ITEC 2905 Capstone\\Lab9\\django\\wishlist\\mangae.py': [Errno 2] No such file or directory
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ python managae.py migrate
+C:\Users\me7196pe\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'C:\\Users\\me7196pe\\ITEC 2905 Capstone\\Lab9\\django\\wishlist\\managae.py': [Errno 2] No such file or directory
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions, travel_wishlist
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+  Applying travel_wishlist.0001_initial... OK
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ python managae.py createsuperuser
+C:\Users\me7196pe\AppData\Local\Programs\Python\Python311\python.exe: can't open file 'C:\\Users\\me7196pe\\ITEC 2905 Capstone\\Lab9\\django\\wishlist\\managae.py': [Errno 2] No such file or directory
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ python manage.py createsuperuser
+Superuser creation skipped due to not running in a TTY. You can run `manage.py createsuperuser` in your project to create one manually.
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ ython manage.py createsuperuser
+bash: ython: command not found
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$ python manage.py createsuperuser
+Superuser creation skipped due to not running in a TTY. You can run `manage.py createsuperuser` in your project to create one manually.
+(venv)
+me7196pe@DLP-1914261-L MINGW64 ~/ITEC 2905 Capstone/Lab9/django/wishlist (main)
+$

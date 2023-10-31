@@ -1,0 +1,16 @@
+<h2>Travel Wishlist</h2>
+
+{% for place in places %}
+
+<div>
+    {{  place.name }}
+</div>
+
+<!-- If places is empty, display this: -->
+{% empty %}
+
+<p>
+    You have no places in your list
+</p>
+
+{% endfor %}
