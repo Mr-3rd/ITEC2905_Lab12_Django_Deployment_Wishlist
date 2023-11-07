@@ -25,6 +25,11 @@ def place_list(request):
     # return by rendering the wishlist website to display the places
     return render(request, 'travel_wishlist/wishlist.html', {'places': places, 'new_place_form': new_place_form})
 
+# create the places visited page view
+def places_visited(request):
+    visited = Place.objects.filter(visited=True).order_by('name')
+    return render(request, 'travel_wishlist/visited.html', {'visited': visited})
+
 # Create the function to build the about page
 def about(request):
     # Create the author and about content
