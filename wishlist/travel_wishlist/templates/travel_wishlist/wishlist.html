@@ -1,5 +1,16 @@
 <h2>Travel Wishlist</h2>
 
+<!-- create the post form to add a new place -->
+        <!-- Use URL reversing to build a dynamic URL that will not require changes when template-ing -->
+<form method="POST" action="{% url 'place_list' %}">
+    <!-- create the cross site re foundry token?  -->
+    {% csrf_token %}
+    {{ new_place_form }}
+    <button type="submit">Add Place</button>
+</form>
+
+
+
 {% for place in places %}
 
 <div>
