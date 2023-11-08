@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Place
 # import the forms object - NOTE - look at where forms.py is!
 from .forms import NewPlaceForm
@@ -37,3 +37,21 @@ def about(request):
     about = "A website designed in django which allows for a user to save visited places!"
     # render the ab out page with content
     return render(request, 'travel_wishlist/about.html', {'author': author, 'about': about})
+
+def place_visited(request, place_pk):
+
+    if request.method == 'POST':
+        # Method to search for one item - by Primary Key or ID
+        # place = Place.objects.get(pk=place_pk)
+
+        # Using the 404 option
+        place = get_object_or_404(Place, pk=place_pk)
+
+        place.visited = True
+        # Change is not retained unless saved
+        place.save()
+
+    # I prefer to be directed to the visited places
+    # return redirect('place_list')
+    return redirect('places_visited')
+

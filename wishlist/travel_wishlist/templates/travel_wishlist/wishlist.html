@@ -15,6 +15,14 @@
 
 <div>
     {{  place.name }}
+
+        <!-- Unique activity here: place_visited refers to the name you chose 
+        for the URL in urls.py - place.pk allows you to collect a places primary key dynamically
+        This is called URL Reversing -->
+    <form method="POST" action="{% url 'place_visited' place.pk %}">
+        {% csrf_token %}
+        <button>Visited</button>
+    </form>
 </div>
 
 <!-- If places is empty, display this: -->
