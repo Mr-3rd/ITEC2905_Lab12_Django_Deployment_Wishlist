@@ -1,3 +1,9 @@
+<!-- this is the connection to the details from base html file 
+Embeds the current page within base-->
+{% extends 'travel_wishlist/base.html' %}
+{% block content %}
+
+
 <h2>About</h2>
 
 <div>
@@ -7,8 +13,4 @@
 
 </div>
 
-<a href="{% url 'place_list' %}">Home</a>
-
-<a href="{% url 'places_visited' %}">Visited Places</a>
-
-<a href="{% url 'about' %}">About</a>
+{% endblock %}

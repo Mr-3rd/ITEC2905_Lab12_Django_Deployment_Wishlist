@@ -1,6 +1,6 @@
 <!-- this is the connection to the details from base html file 
 Embeds the current page within base-->
-{% extends 'travel_wishlist/base/html' %}
+{% extends 'travel_wishlist/base.html' %}
 {% block content %}
 
 <h2>Travel Wishlist</h2>
@@ -11,20 +11,21 @@ Embeds the current page within base-->
     <!-- create the cross site re foundry token?  -->
     {% csrf_token %}
     {{ new_place_form }}
-    <button type="submit">Add Place</button>
+    <button id="add-place" type="submit">Add Place</button>
 </form>
 
 
 
 {% for place in places %}
 
-<div>
-    {{  place.name }}
+<div class="wishlist-place">
+
+    <span class="place-name">{{  place.name }}</span>
 
         <!-- Unique activity here: place_visited refers to the name you chose 
         for the URL in urls.py - place.pk allows you to collect a places primary key dynamically
         This is called URL Reversing -->
-    <form method="POST" action="{% url 'place_visited' place.pk %}">
+    <form class="visited-form" method="POST" action="{% url 'place_visited' place.pk %}">
         {% csrf_token %}
         <button>Visited</button>
     </form>

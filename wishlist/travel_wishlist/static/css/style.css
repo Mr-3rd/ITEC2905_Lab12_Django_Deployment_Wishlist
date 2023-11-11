@@ -1,0 +1,30 @@
+span.place-name {
+    display: inline-block;
+    width: 70%;
+}
+
+form.visited-form {
+    display: inline;
+}
+
+div.wishlist-place {
+    margin: 20px;
+}
+
+label {
+    display: inline-block;
+    padding-right: 8px;
+}
+
+a.nav-link {
+    margin-right: 10px;
+}
+
+#add-place {
+    background-color: rgb(47, 9, 112);
+    border: black;
+}
+
+#add-place:hover {
+    background-color: crimson;
+}
