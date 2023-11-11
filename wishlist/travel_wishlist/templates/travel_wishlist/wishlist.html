@@ -7,7 +7,7 @@ Embeds the current page within base-->
 
 <!-- create the post form to add a new place -->
         <!-- Use URL reversing to build a dynamic URL that will not require changes when template-ing -->
-<form method="POST" action="{% url 'place_list' %}">
+<form class="visited-form" method="POST" action="{% url 'place_list' %}">
     <!-- create the cross site re foundry token?  -->
     {% csrf_token %}
     {{ new_place_form }}
