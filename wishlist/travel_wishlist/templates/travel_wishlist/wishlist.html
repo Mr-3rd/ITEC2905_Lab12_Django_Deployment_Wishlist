@@ -20,7 +20,11 @@ Embeds the current page within base-->
 
 <div class="wishlist-place">
 
-    <span id="place-name-{{ place.pk }}" class="place-name">{{  place.name }}</span>
+    <span id="place-name-{{ place.pk }}" class="place-name">
+        <a href="{% url 'place_details' place.pk %}" >
+            {{ place.name }}
+        </a>  
+    </span>
 
         <!-- Unique activity here: place_visited refers to the name you chose 
         for the URL in urls.py - place.pk allows you to collect a places primary key dynamically

@@ -1,0 +1,50 @@
+PS C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django> & "c:/Users/me7196pe/ITEC 2905 Capstone/Lab10/ITEC2905_Lab9_Django/venv/Scripts/Activate.ps1"
+(venv) PS C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django> pip install pillow
+Collecting pillow
+  Obtaining dependency information for pillow from https://files.pythonhosted.org/packages/b1/38/31def4109acd4db10672df6f806b175c0d21458f845ddc0890e43238ba7c/Pillow-10.1.0-cp311-cp311-win_amd64.whl.metadata
+Downloading Pillow-10.1.0-cp311-cp311-win_amd64.whl (2.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 4.6 MB/s eta 0:00:00
+Installing collected packages: pillow
+Successfully installed pillow-10.1.0
+
+[notice] A new release of pip is available: 23.2.1 -> 23.3.1
+[notice] To update, run: C:\Users\me7196pe\ITEC 2905 Capstone\Lab9\django\venv\Scripts\python.exe -m pip install --upgrade pip
+(venv) PS C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django\wishlist> python manage.py makemigrations
+SystemCheckError: System check identified some issues:
+
+ERRORS:
+travel_wishlist.Place.photo: (fields.E210) Cannot use ImageField because Pillow is not installed.
+        HINT: Get Pillow at https://pypi.org/project/Pillow/ or run command "python -m pip install Pillow".
+(venv) PS C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django\wishlist> pip install Pillow
+Requirement already satisfied: Pillow in c:\users\me7196pe\itec 2905 capstone\lab9\django\venv\lib\site-packages (10.1.0)
+
+[notice] A new release of pip is available: 23.2.1 -> 23.3.1
+[notice] To update, run: C:\Users\me7196pe\ITEC 2905 Capstone\Lab9\django\venv\Scripts\python.exe -m pip install --upgrade pip
+(venv) PS C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django\wishlist> python -m pip install Pillow
+Collecting Pillow
+  Obtaining dependency information for Pillow from https://files.pythonhosted.org/packages/b1/38/31def4109acd4db10672df6f806b175c0d21458f845ddc0890e43238ba7c/Pillow-10.1.0-cp311-cp311-win_amd64.whl.metadata
+  Using cached Pillow-10.1.0-cp311-cp311-win_amd64.whl.metadata (9.6 kB)
+Installing collected packages: Pillow
+Successfully installed Pillow-10.1.0
+(venv) PS C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django\wishlist> python manage.py makemigrations
+It is impossible to add a non-nullable field 'user' to place without specifying a default. This is because the database needs something to populate existing rows.
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit and manually define a default value in models.py.
+Select an option: 1
+Please enter the default value as valid Python.
+The datetime and django.utils.timezone modules are available, so it is possible to provide e.g. timezone.now as a value.
+Type 'exit' to exit this prompt
+>>> 1
+Migrations for 'travel_wishlist':
+  travel_wishlist\migrations\0002_place_date_visited_place_notes_place_photo_and_more.py
+    - Add field date_visited to place
+    - Add field notes to place
+    - Add field photo to place
+    - Add field user to place
+(venv) PS C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django\wishlist> python manage.py migrate       
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions, travel_wishlist
+Running migrations:
+  Applying travel_wishlist.0002_place_date_visited_place_notes_place_photo_and_more... OK
+(venv) PS C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django\wishlist>           
