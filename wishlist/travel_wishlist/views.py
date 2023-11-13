@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Place
 # import the forms object - NOTE - look at where forms.py is!
-from .forms import NewPlaceForm
+from .forms import NewPlaceForm, TripReviewForm
 # add a logion decorator to ensure a user sees only their places
 from django.contrib.auth.decorators import login_required
 # include security to keep from changing visited places
 from django.http import HttpResponseForbidden
+# import django's messages package to display the update notification
+from django.contrib import messages
 
 
 # Create your views here.
@@ -77,7 +79,34 @@ def place_visited(request, place_pk):
 @login_required
 def place_details(request, place_pk):
     place = get_object_or_404(Place, pk=place_pk)
-    return render(request, 'travel_wishlist/detail.html', {'place': place})
+
+    # add the code to get the place and display/modify the existing details
+
+    # user permissions?
+    if place.user != request.user:
+        return HttpResponseForbidden()
+    
+    # Post Request? validate form and update model
+    if request.method == 'POST':
+        # create a new form with the data sent to update an instance of a place in the db
+        form = TripReviewForm(request.POST, request.FILES, instance=place)
+
+        if form.is_valid():
+            place.save()
+            messages.info(request, 'Trip information updated')
+        else:
+            messages.error(request, form.errors) #refine later
+        
+        return redirect('place_details', place_pk=place_pk)
+    else:
+        # Get Request? show place info and optional form
+        # if place is not visited, do not show the form
+        if place.visited:
+            review_form = TripReviewForm(instance=place)
+            return render(request, 'travel_wishlist/detail.html', {'place': place, 'review_form': review_form})
+        else:
+            return render(request, 'travel_wishlist/detail.html', {'place': place})
+
 
 @login_required
 def delete_place(request, place_pk):
