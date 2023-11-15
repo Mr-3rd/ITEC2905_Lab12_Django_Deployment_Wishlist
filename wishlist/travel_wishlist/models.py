@@ -16,6 +16,7 @@ class Place(models.Model):
     
     notes = models.TextField(blank=True, null =True)
     date_visited = models.DateField(blank=True, null =True)
+    # upload to creates the images directory 
     photo = models.ImageField(upload_to='user_images/', blank=True, null =True)
 
     #original data
@@ -32,12 +33,14 @@ class Place(models.Model):
             if current_place.photo != self.photo:
                 # delete the old photo
                 self.delete_photo(current_place.photo)
+
         super().save(*args, **kwargs)
 
 
     def delete_photo(self, photo):
         if default_storage.exists(photo.name):
-            default_storage.delete(photo)
+            #TODO: I had photo here, and not photo.name error solved
+            default_storage.delete(photo.name)
 
 
     def __str__(self):

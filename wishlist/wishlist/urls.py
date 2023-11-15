@@ -27,4 +27,5 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 if settings.DEBUG:
+    # adds the url for an image to the urls of the site
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
