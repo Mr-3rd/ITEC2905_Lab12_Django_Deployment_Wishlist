@@ -42,6 +42,11 @@ class Place(models.Model):
             #TODO: I had photo here, and not photo.name error solved
             default_storage.delete(photo.name)
 
+    def delete(self, *args, **kwargs):
+        if self.photo:
+            self.delete_photo(self.photo)
+        super().delete(*args, **kwargs)
+
 
     def __str__(self):
         photo_str = self.photo.url if self.photo else 'no photo'
