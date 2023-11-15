@@ -1,0 +1,23 @@
+(venv) PS C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django\wishlist> python manage.py test
+Found 20 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+.........F..........
+======================================================================
+FAIL: test_mark_unvisited_place_as_visited (travel_wishlist.tests.TestMarkPlaceAsVisited.test_mark_unvisited_place_as_visited)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django\wishlist\travel_wishlist\tests.py", line 155, in test_mark_unvisited_place_as_visited   
+    self.assertTemplateUsed(response, 'travel_wishlist/wishlist.html')
+  File "C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django\venv\Lib\site-packages\django\test\testcases.py", line 859, in assertTemplateUsed       
+    self._assert_template_used(template_name, template_names, msg_prefix, count)
+  File "C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django\venv\Lib\site-packages\django\test\testcases.py", line 824, in _assert_template_used    
+    self.assertTrue(
+AssertionError: False is not true : Template 'travel_wishlist/wishlist.html' was not a template used to render the response. Actual template(s) used: travel_wishlist/visited.html, travel_wishlist/base.html
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.641s
+
+FAILED (failures=1)
+Destroying test database for alias 'default'...
+(venv) PS C:\Users\me7196pe\ITEC 2905 Capstone\Lab10\ITEC2905_Lab9_Django\wishlist> 

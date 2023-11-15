@@ -150,9 +150,9 @@ class TestMarkPlaceAsVisited(TestCase):
 
     def test_mark_unvisited_place_as_visited(self):
 
-        response = self.client.post(reverse('place_was_visited', args=(2,)), follow=True)
+        response = self.client.post(reverse('place_visited', args=(2,)), follow=True)
         # Assert redirected to place list
-        self.assertTemplateUsed(response, 'travel_wishlist/wishlist.html')
+        self.assertTemplateUsed(response, 'travel_wishlist/visited.html')
 
         # Check database for correct data
         place = Place.objects.get(pk=2)
@@ -160,12 +160,12 @@ class TestMarkPlaceAsVisited(TestCase):
 
 
     def test_mark_non_existent_place_as_visited_returns_404(self):
-        response = self.client.post(reverse('place_was_visited', args=(200,)), follow=True)
+        response = self.client.post(reverse('place_visited', args=(200,)), follow=True)
         self.assertEqual(404, response.status_code)
 
 
     def test_visit_someone_else_place_not_authorized(self):
-        response = self.client.post(reverse('place_was_visited', args=(5,)), follow=True)
+        response = self.client.post(reverse('place_visited', args=(5,)), follow=True)
         self.assertEqual(403, response.status_code)  # 403 Forbidden
 
 
@@ -210,7 +210,7 @@ class TestPlaceDetail(TestCase):
 
         response = self.client.get(reverse('place_details', kwargs={'place_pk':1} ))
         # Check correct template was used
-        self.assertTemplateUsed(response, 'travel_wishlist/place_detail.html')
+        self.assertTemplateUsed(response, 'travel_wishlist/detail.html')
 
         # What data was sent to the template?
         data_rendered = response.context['place']
@@ -238,7 +238,7 @@ class TestPlaceDetail(TestCase):
 
         self.assertEqual(response.context['place'], updated_place_1)
         # Check correct template was used
-        self.assertTemplateUsed(response, 'travel_wishlist/place_detail.html')
+        self.assertTemplateUsed(response, 'travel_wishlist/detail.html')
 
         # and correct data shown on page?
         self.assertNotContains(response, 'cool')  # old text is gone 
@@ -257,7 +257,7 @@ class TestPlaceDetail(TestCase):
         # Correct object used in response?
         self.assertEqual(response.context['place'], updated_place_4)
         # Check correct template was used
-        self.assertTemplateUsed(response, 'travel_wishlist/place_detail.html')
+        self.assertTemplateUsed(response, 'travel_wishlist/detail.html')
 
         # and correct data shown on page?
         self.assertContains(response, 'yay')  # new text shown
@@ -278,7 +278,7 @@ class TestPlaceDetail(TestCase):
         self.assertEqual(response.context['place'], updated_place_4)
 
         # Check correct template was used
-        self.assertTemplateUsed(response, 'travel_wishlist/place_detail.html')
+        self.assertTemplateUsed(response, 'travel_wishlist/detail.html')
 
         # and correct data shown on page?
         self.assertContains(response, date_visited)  # new text shown
